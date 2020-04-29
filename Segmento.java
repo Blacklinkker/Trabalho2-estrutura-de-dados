@@ -1,11 +1,12 @@
 package Trab2;
-
+//declaração do segmento
 public class Segmento {
     Segmento primeiro=null;
     String nome;
     Segmento proximo;
     int tamanho=0;
 
+    //metodo para adicionar segmento no inicio da lista
     public void addInicio(String nome){
         Segmento segmento = new Segmento();
         segmento.nome=nome; 
@@ -13,6 +14,7 @@ public class Segmento {
         primeiro=segmento;
         tamanho++;
     }
+    //metodo para remover segmento no inicio da lista
     public String removeInicio(){
         if(primeiro==null){
             return "Lista vazia";
@@ -21,6 +23,7 @@ public class Segmento {
         tamanho--;
         return aux;   
     }
+    //metodo para adicionar segmento no meio da lista
     public void addMeio(int posicao,String nome){
         if(posicao<=0){
             addInicio(nome);
@@ -38,6 +41,7 @@ public class Segmento {
         }
     }
 
+    //metodo para remover segmento no meio da lista
     public String removeMeio(int posicao){
         if(tamanho==0 || posicao>tamanho){
             return null;
@@ -57,7 +61,7 @@ public class Segmento {
         }
     }
 
-    
+    //metodo para adicionar segmento no fim da lista
     public void addFim(String nome){
         Segmento segmento = new Segmento();
         segmento.nome=nome;
@@ -74,6 +78,7 @@ public class Segmento {
         
         }
     }
+    //metodo para adicionar segmento no fim da lista
     public String removeFim(){
         if(primeiro==null){
             return null;
@@ -90,6 +95,7 @@ public class Segmento {
         tamanho--;
         return aux.nome;
     }
+    //sobrescrição do metodo toString para usar de forma personalizada
     @Override
     public String toString(){
         String compilado="";
