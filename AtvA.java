@@ -11,7 +11,7 @@ public class AtvA{
         lista.addInicio("John eckert");
         tamanho++;
         lista.addMeio(1,"Von neumann");
-        tamanho++;
+        tamanho++; 
         lista.addFim("Alan turing");
         tamanho++;
         lista.addFim("linus torvalds");
