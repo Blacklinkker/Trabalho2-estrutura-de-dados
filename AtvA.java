@@ -16,11 +16,15 @@ public class AtvA{
         tamanho++;
         lista.addFim("linus torvalds");
         tamanho++;
-        
+        //mostra a lista usando o toString modificado
         JOptionPane.showMessageDialog(null,"Lista:"+lista.toString());
+        //remove no meio,com indice 1
         JOptionPane.showMessageDialog(null,"removendo meio: "+lista.removeMeio(1));
+        //remove no inicio
         JOptionPane.showMessageDialog(null,"removendo inicio: "+lista.removeInicio());
+        //rmeove no fim
         JOptionPane.showMessageDialog(null,"removendo fim:"+lista.removeFim());
+        //remove no meio novamente
         JOptionPane.showMessageDialog(null,"removendo meio:"+lista.removeMeio(1));
         
 

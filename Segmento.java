@@ -16,6 +16,7 @@ public class Segmento {
     }
     //metodo para remover segmento no inicio da lista
     public String removeInicio(){
+        //verifica se a lista esta vazia
         if(primeiro==null){
             return "Lista vazia";
         }
@@ -26,8 +27,10 @@ public class Segmento {
     //metodo para adicionar segmento no meio da lista
     public void addMeio(int posicao,String nome){
         if(posicao<=0){
+            //se a posição corresponder ao incio, aproveita o addInicio ja escrito
             addInicio(nome);
         }else if(posicao>=tamanho){
+            //se a posição corresponder ao fim, aproveita o addFim ja escrito
             addFim(nome);
         }else{
             Segmento aux=primeiro;
@@ -43,11 +46,14 @@ public class Segmento {
 
     //metodo para remover segmento no meio da lista
     public String removeMeio(int posicao){
+        //verifica se a posição existe
         if(tamanho==0 || posicao>tamanho){
             return null;
         }else if(posicao==0){
+            //se posição for igual o inicio,utiliza o metodo removeInicio ja escrito
             return removeInicio();
         }else if(posicao==tamanho-1){
+            //se a posião for igual ao fim,utiliza o metodo removeFim ja escrito 
             return removeFim();
         }else{
             Segmento aux=primeiro;
@@ -69,6 +75,8 @@ public class Segmento {
         if(primeiro==null){
             addInicio(nome);
         }else{
+            //while percorre a lista pulando de segmento em segmento partindo do inicio
+            //começa no primeiro e utiliza o .proximo de cada um para avançar
             while(aux.proximo!=null){
                 aux=aux.proximo;
             }
@@ -84,6 +92,8 @@ public class Segmento {
             return null;
         }
         Segmento aux=primeiro;
+        //while percorre a lista pulando de segmento em segmento partindo do inicio
+        //começa no primeiro e utiliza o .proximo de cada um para avançar
         while(aux.proximo!=null){
             aux=aux.proximo;
             if(aux.proximo==null){
@@ -98,6 +108,7 @@ public class Segmento {
     //sobrescrição do metodo toString para usar de forma personalizada
     @Override
     public String toString(){
+        //personalização do metodo toString
         String compilado="";
         Segmento aux=primeiro;
         while(aux!=null){
